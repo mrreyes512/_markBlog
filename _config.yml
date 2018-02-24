@@ -75,3 +75,5 @@ defaults:
     values:
       layout: post
       read_time: true
+
+encoding: utf-8
