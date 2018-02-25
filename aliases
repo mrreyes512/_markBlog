@@ -1,3 +1,5 @@
 
-
+# Jekyll aliases
 #alias bundle exec jekyll help
+alias jk-build='bundle exec jekyll b'
+alias jk-test='bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html'
