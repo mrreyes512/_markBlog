@@ -18,7 +18,8 @@ function test_site() {
     --only-4xx \
     --check-html \
     --disable-external \
-    --empty-alt-ignore
+    --empty-alt-ignore \
+    --trace
 }
 
 

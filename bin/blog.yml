@@ -1,0 +1,22 @@
+# itermocil shortcut for getting iterm2 windows set up properly
+# Usage: imux blog
+
+windows:
+  - name: Blog
+    root: ~/owncloud/Blog
+    layout: main-vertical
+    panes:
+      - name: editor
+        commands:
+          - iterm2_title "editor"
+          - vim _config.yml
+      - name: files
+        commands:
+          - iterm2_title "files"
+          - figlet git status
+          - git status -bs
+      - name: build
+        commands:
+          - iterm2_title "build"
+          - figlet Build Site
+          - ./bin/build_site.sh --watch
