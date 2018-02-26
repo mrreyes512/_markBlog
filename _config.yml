@@ -41,6 +41,8 @@ feed:
 paginate: 10
 paginate_path: /page:num/
 
+permalink: /:categories/:title
+
 # Exclude from processing.
 exclude:
   - .asset-cache
