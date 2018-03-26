@@ -31,14 +31,6 @@ function fnGetFileNameFromDateAndTitle {
 # New Post
 function fnNew {
 	echo "Creating new post..."
-	if [[ "$1" == "-d" || "$1" == "--draft" ]]; then
-		echo "  Making post a draft..."
-		local _title="$2"
-		local _path="$_draftPath"
-	else
-		_title="$1"
-		local _path="$_postPath"
-	fi
 	# setup vars
   local _date=$(date +%Y-%m-%d)
 	local _fileName=$(fnGetFileNameFromDateAndTitle "$_date" "$_title")
@@ -50,10 +42,15 @@ function fnNew {
 	echo "    Date: $_date"
 
 	echo "---" > ".$_outputFile"
-	echo "layout: post" >> ".$_outputFile"
 	echo "title: \"$_title\"" >> ".$_outputFile"
+	echo "layout: post" >> ".$_outputFile"
 	echo "date: $_date" >> ".$_outputFile"
 	echo "categories: []" >> ".$_outputFile"
 	echo "tags: []" >> ".$_outputFile"
 	echo "---" >> ".$_outputFile"
 }
+
+# Main function
+#---------------------------------
+read -p 'What is your title?\n' _title
+fnNew
