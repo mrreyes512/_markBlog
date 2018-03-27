@@ -24,7 +24,7 @@ author:
   picture: "/assets/images/werepeople.png"
 # twitter_username:
 github_username: mrreyes512
-# logo: "/assets/images/werepeople.png"
+logo: "/assets/images/blog_logo.png"
 
 # Build settings
 markdown: kramdown
