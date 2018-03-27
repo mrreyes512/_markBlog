@@ -12,7 +12,7 @@ function build_site() {
     bundle exec jekyll build
 }
 
-function test_site() {
+function test_html() {
     echo "bundle exec htmlproofer ./_site"
     bundle exec htmlproofer ./_site \
     --only-4xx \
@@ -22,16 +22,21 @@ function test_site() {
     --trace
 }
 
+function test_yml() {
+  echo "bundle exec yaml-lint _posts/ *.md *.yml -n"
+  bundle exec yaml-lint _posts/ *.md *.yml -n
+}
 
 
 #Main
 echo "Executing Jekyll test script"
 
 header
-echo -e "Building site\n"
-build_site
+echo -e "Testing _site\n"
+test_yml
+
 echo -e "\n\n"
 
 header
-echo -e "Testing _site\n"
-test_site
+echo -e "Testing Build site\n"
+build_site

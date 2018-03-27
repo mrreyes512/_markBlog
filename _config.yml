@@ -18,13 +18,25 @@ title: _markBlog
 email: mrreyes512@gmail.com
 description: TECH:FINANCE:FATHER
 baseurl: # the optional subpath of your site, e.g. "/blog"
-url: http://markblog.reyes512.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url: https://mark.reyes512.com/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 author:
   name: Mark Reyes
   picture: "/assets/images/werepeople.png"
 # twitter_username:
 github_username: mrreyes512
 logo: "/assets/images/blog_logo.png"
+
+google_analytics: UA-116471927-1
+
+search: true
+search_provider: algolia
+
+# Algolia Settings
+algolia:
+  application_id: K25EESR76R
+  index_name: prod_MBlog
+  search_only_api_key: 847e885b81c9734f9edf42ac37500ce6
+  powered_by: true
 
 # Build settings
 markdown: kramdown
@@ -38,7 +50,7 @@ feed:
   path: atom.xml
 
 # Pagination - https://jekyllrb.com/docs/pagination/
-paginate: 10
+paginate: 5
 paginate_path: /page:num/
 
 permalink: /:categories/:title
@@ -66,6 +78,13 @@ exclude:
   - vendor/ruby/
   - /docs # ignore Basically Basic sample site
   - /example # ignore Basically Basic dev site
+
+# Disqus settings
+# Comments are enabled by default and will only appear in production when built
+# with the following environment value: JEKYLL_ENV=production
+# My Disqus site: https://mrreyes512.disqus.com/admin/
+disqus:
+  shortname: mrreyes512
 
 # Front Matter Defaults
 defaults:
